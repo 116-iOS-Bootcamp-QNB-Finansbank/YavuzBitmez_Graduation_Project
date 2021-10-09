@@ -16,5 +16,4 @@ struct Section {
 
 struct Row {
     let displayName: String
-    let downloads: Int
 }
