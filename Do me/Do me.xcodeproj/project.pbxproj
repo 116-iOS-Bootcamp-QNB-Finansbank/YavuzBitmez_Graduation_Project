@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5002CD4B2710DA7E00A2CD58 /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */; };
+		5002CD4D2710DC0700A2CD58 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4C2710DC0700A2CD58 /* AppContainer.swift */; };
+		5002CD4F2710DC6600A2CD58 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4E2710DC6600A2CD58 /* AppRouter.swift */; };
 		50346A7D2705BF1300A96BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50346A7C2705BF1300A96BFC /* AppDelegate.swift */; };
 		50346A7F2705BF1300A96BFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50346A7E2705BF1300A96BFC /* SceneDelegate.swift */; };
 		50346A842705BF1300A96BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50346A822705BF1300A96BFC /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
+		5002CD4C2710DC0700A2CD58 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		5002CD4E2710DC6600A2CD58 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		50346A792705BF1300A96BFC /* Do me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Do me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50346A7C2705BF1300A96BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50346A7E2705BF1300A96BFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5002CD502710DF0F00A2CD58 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				50346ABD2705DAEA00A96BFC /* Section.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		50346A702705BF1300A96BFC = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +137,11 @@
 		50346A7B2705BF1300A96BFC /* Do me */ = {
 			isa = PBXGroup;
 			children = (
+				5002CD502710DF0F00A2CD58 /* Helper */,
 				50346A7C2705BF1300A96BFC /* AppDelegate.swift */,
 				50346A7E2705BF1300A96BFC /* SceneDelegate.swift */,
+				5002CD4C2710DC0700A2CD58 /* AppContainer.swift */,
+				5002CD4E2710DC6600A2CD58 /* AppRouter.swift */,
 				50346AC8270645EA00A96BFC /* Extension */,
 				50346AB32705D27400A96BFC /* ListScreen */,
 				50346AB42705D2AC00A96BFC /* DetailScreen */,
@@ -163,7 +180,7 @@
 				50346ABF2705F39B00A96BFC /* Cell */,
 				50346AB92705D31900A96BFC /* ListViewController.swift */,
 				50346ABA2705D31900A96BFC /* ListViewController.xib */,
-				50346ABD2705DAEA00A96BFC /* Section.swift */,
+				5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */,
 			);
 			path = ListScreen;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5002CD4D2710DC0700A2CD58 /* AppContainer.swift in Sources */,
 				50346AC62705F7FC00A96BFC /* PinnedCollectionViewCell.swift in Sources */,
 				50346A7D2705BF1300A96BFC /* AppDelegate.swift in Sources */,
 				50346AB02705CE2C00A96BFC /* NotificationManager.swift in Sources */,
@@ -339,6 +357,8 @@
 				50346ABE2705DAEA00A96BFC /* Section.swift in Sources */,
 				50346ACA2706460F00A96BFC /* UIColor.swift in Sources */,
 				50346AC22705F3EA00A96BFC /* PinnedTableViewCell.swift in Sources */,
+				5002CD4F2710DC6600A2CD58 /* AppRouter.swift in Sources */,
+				5002CD4B2710DA7E00A2CD58 /* ListBuilder.swift in Sources */,
 				50346ABB2705D31900A96BFC /* ListViewController.swift in Sources */,
 				50346AB72705D2E400A96BFC /* DetailViewController.swift in Sources */,
 			);

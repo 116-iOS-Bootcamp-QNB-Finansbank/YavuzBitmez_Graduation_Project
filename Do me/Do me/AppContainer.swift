@@ -5,4 +5,10 @@
 //  Created by Yavuz Selim Bitmez on 8.10.2021.
 //
 
-import Foundation
+import UIKit
+
+let appContainer = AppContainer()
+
+class AppContainer {
+    let router = AppRouter()
+}
