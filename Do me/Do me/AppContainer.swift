@@ -10,5 +10,6 @@ import UIKit
 let appContainer = AppContainer()
 
 class AppContainer {
+//    let service = dbservice()
     let router = AppRouter()
 }

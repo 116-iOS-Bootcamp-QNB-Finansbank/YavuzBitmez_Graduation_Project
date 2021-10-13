@@ -10,6 +10,11 @@
 		5002CD4B2710DA7E00A2CD58 /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */; };
 		5002CD4D2710DC0700A2CD58 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4C2710DC0700A2CD58 /* AppContainer.swift */; };
 		5002CD4F2710DC6600A2CD58 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD4E2710DC6600A2CD58 /* AppRouter.swift */; };
+		5002CD5227123C0D00A2CD58 /* ListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD5127123C0D00A2CD58 /* ListContracts.swift */; };
+		5002CD562712458500A2CD58 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD552712458500A2CD58 /* ListInteractor.swift */; };
+		5002CD5927124D0500A2CD58 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD5827124D0500A2CD58 /* ListRouter.swift */; };
+		5002CD5B27124EA400A2CD58 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD5A27124EA400A2CD58 /* ListPresenter.swift */; };
+		5002CD5D2712530F00A2CD58 /* ListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002CD5C2712530F00A2CD58 /* ListPresentation.swift */; };
 		50346A7D2705BF1300A96BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50346A7C2705BF1300A96BFC /* AppDelegate.swift */; };
 		50346A7F2705BF1300A96BFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50346A7E2705BF1300A96BFC /* SceneDelegate.swift */; };
 		50346A842705BF1300A96BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50346A822705BF1300A96BFC /* Main.storyboard */; };
@@ -53,6 +58,11 @@
 		5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
 		5002CD4C2710DC0700A2CD58 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		5002CD4E2710DC6600A2CD58 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5002CD5127123C0D00A2CD58 /* ListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContracts.swift; sourceTree = "<group>"; };
+		5002CD552712458500A2CD58 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		5002CD5827124D0500A2CD58 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		5002CD5A27124EA400A2CD58 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		5002CD5C2712530F00A2CD58 /* ListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresentation.swift; sourceTree = "<group>"; };
 		50346A792705BF1300A96BFC /* Do me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Do me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50346A7C2705BF1300A96BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50346A7E2705BF1300A96BFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +124,21 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		5002CD5327123EA100A2CD58 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				50346AAF2705CE2C00A96BFC /* NotificationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5002CD572712465600A2CD58 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		50346A702705BF1300A96BFC = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +171,8 @@
 				50346AB32705D27400A96BFC /* ListScreen */,
 				50346AB42705D2AC00A96BFC /* DetailScreen */,
 				50346A822705BF1300A96BFC /* Main.storyboard */,
-				50346AAF2705CE2C00A96BFC /* NotificationManager.swift */,
+				5002CD572712465600A2CD58 /* Services */,
+				5002CD5327123EA100A2CD58 /* Manager */,
 				50346AB12705CE6800A96BFC /* TaskModel.swift */,
 				50346A882705BF1700A96BFC /* Assets.xcassets */,
 				50346A8A2705BF1700A96BFC /* LaunchScreen.storyboard */,
@@ -181,6 +207,11 @@
 				50346AB92705D31900A96BFC /* ListViewController.swift */,
 				50346ABA2705D31900A96BFC /* ListViewController.xib */,
 				5002CD4A2710DA7E00A2CD58 /* ListBuilder.swift */,
+				5002CD5C2712530F00A2CD58 /* ListPresentation.swift */,
+				5002CD552712458500A2CD58 /* ListInteractor.swift */,
+				5002CD5827124D0500A2CD58 /* ListRouter.swift */,
+				5002CD5127123C0D00A2CD58 /* ListContracts.swift */,
+				5002CD5A27124EA400A2CD58 /* ListPresenter.swift */,
 			);
 			path = ListScreen;
 			sourceTree = "<group>";
@@ -348,14 +379,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5002CD4D2710DC0700A2CD58 /* AppContainer.swift in Sources */,
+				5002CD5927124D0500A2CD58 /* ListRouter.swift in Sources */,
 				50346AC62705F7FC00A96BFC /* PinnedCollectionViewCell.swift in Sources */,
 				50346A7D2705BF1300A96BFC /* AppDelegate.swift in Sources */,
 				50346AB02705CE2C00A96BFC /* NotificationManager.swift in Sources */,
 				50346A872705BF1300A96BFC /* Do_me.xcdatamodeld in Sources */,
 				50346AB22705CE6800A96BFC /* TaskModel.swift in Sources */,
+				5002CD562712458500A2CD58 /* ListInteractor.swift in Sources */,
 				50346A7F2705BF1300A96BFC /* SceneDelegate.swift in Sources */,
+				5002CD5227123C0D00A2CD58 /* ListContracts.swift in Sources */,
+				5002CD5B27124EA400A2CD58 /* ListPresenter.swift in Sources */,
 				50346ABE2705DAEA00A96BFC /* Section.swift in Sources */,
 				50346ACA2706460F00A96BFC /* UIColor.swift in Sources */,
+				5002CD5D2712530F00A2CD58 /* ListPresentation.swift in Sources */,
 				50346AC22705F3EA00A96BFC /* PinnedTableViewCell.swift in Sources */,
 				5002CD4F2710DC6600A2CD58 /* AppRouter.swift in Sources */,
 				5002CD4B2710DA7E00A2CD58 /* ListBuilder.swift in Sources */,
