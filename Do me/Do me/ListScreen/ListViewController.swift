@@ -12,29 +12,22 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var noTaskView: UIView!
     @IBOutlet weak var filterButton: UIButton!
-    var taskLists = [TaskModel]()
+    
+    var presenter: ListPresenterProtocol!
+    var taskList: [ListPresentation] = []
+
     var finishedLists = [TaskModel]()
     var sections = [Section]()
-    let date = Date()
     override func viewDidLoad() {
         super.viewDidLoad()
         Bundle.main.loadNibNamed("ListViewController", owner: self, options: nil)
         configureTableView()
         configureSections()
-        taskDemo()
+        presenter.viewDidLoad()
 
+        
     }
-    private func taskDemo(){
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.taskLists.append(TaskModel(id: 1, header: "Yap", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.finishedLists.append(TaskModel(id: 1, header: "Bittiiiii", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.finishedLists.append(TaskModel(id: 1, header: "Bittiiiii", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-        self.finishedLists.append(TaskModel(id: 1, header: "Bittiiiii", date: self.date, context: "Bunlarrrrrrrrrrrrrrrr"))
-    }
+
     private func configureSections(){
         let pinnedSection = Section(name: "Pinned")
         let upComingSection = Section(name: "UpComing")
@@ -53,7 +46,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tapped")
+        presenter.didSelectRow(at: indexPath)
     }
 }
 
@@ -61,6 +54,7 @@ extension ListViewController:UITableViewDataSource{
   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "PinnedTableViewCell", for: indexPath) as! PinnedTableViewCell
+        cell.taskList = self.taskList
         return cell
     }
     //Section process
@@ -71,7 +65,7 @@ extension ListViewController:UITableViewDataSource{
         if self.sections[section].name == "Pinned" {
             return 1
         }else if self.sections[section].name == "UpComing"{
-            return self.taskLists.count
+            return self.taskList.count
         }else  {
             return self.finishedLists.count
         }
@@ -90,4 +84,19 @@ extension ListViewController:UITableViewDataSource{
         view.addSubview(title)
         return view
     }
+}
+
+extension ListViewController:ListViewProtocol{
+    func handleOutput(_ output: ListPresenterOutput) {
+        switch output {
+        case .showList(let tasks):
+        self.taskList = tasks
+        DispatchQueue.main.async {
+            self.tableview.reloadData()
+            }
+        }
+        
+    }
+    
+    
 }

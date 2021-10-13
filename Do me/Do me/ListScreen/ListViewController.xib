@@ -88,10 +88,18 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-UE-vys">
+                    <rect key="frame" x="314" y="772" width="54" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="VkZ-kW-iDC"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="plus" catalog="system"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="idm-UE-vys" secondAttribute="bottom" constant="46" id="Aqh-go-fPg"/>
                 <constraint firstItem="Wtz-hL-blb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="HlW-C8-B9S"/>
                 <constraint firstItem="Z8W-CD-2tt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="Htf-P0-zdj"/>
                 <constraint firstItem="NoJ-jR-48P" firstAttribute="top" secondItem="Z8W-CD-2tt" secondAttribute="bottom" constant="24" id="LZW-In-ovM"/>
@@ -102,12 +110,14 @@
                 <constraint firstItem="NoJ-jR-48P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mr4-f8-ud6"/>
                 <constraint firstItem="NoJ-jR-48P" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rFC-SQ-w2Q"/>
                 <constraint firstItem="Z8W-CD-2tt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="yVI-Vr-aYb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="idm-UE-vys" secondAttribute="trailing" constant="46" id="zmx-Qq-lEJ"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
     <resources>
         <image name="noTaskImage" width="726" height="688"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

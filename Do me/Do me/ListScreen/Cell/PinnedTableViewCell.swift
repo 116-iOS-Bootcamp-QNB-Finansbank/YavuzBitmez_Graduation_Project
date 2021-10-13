@@ -10,6 +10,7 @@ import UIKit
 class PinnedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var taskList: [ListPresentation] = []
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCollectionView()
@@ -25,7 +26,6 @@ class PinnedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
 
 extension PinnedTableViewCell:UICollectionViewDelegate {
@@ -40,6 +40,9 @@ extension PinnedTableViewCell:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PinnedCollectionViewCell", for: indexPath) as! PinnedCollectionViewCell
+        cell.header.text = self.taskList[indexPath.row].header
+        cell.title.text = self.taskList[indexPath.row].context
+        cell.dateText.text = "13:51"
         return cell
     }
 }
