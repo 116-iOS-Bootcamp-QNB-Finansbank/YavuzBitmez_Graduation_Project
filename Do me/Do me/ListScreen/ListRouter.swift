@@ -16,8 +16,12 @@ class ListRouter: NSObject,ListRouterProtocol {
     func navigate(to route: ListRoute) {
         switch route {
         case .showDetail(let task):
-            print("Go detail")
+            let viewController = DetailBuilder.build(with: task)
+            self.view.navigationController?.pushViewController(viewController, animated: true)
             // route detail page
+        case .showAdd:
+            let viewController = DetailBuilder.build()
+            self.view.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
