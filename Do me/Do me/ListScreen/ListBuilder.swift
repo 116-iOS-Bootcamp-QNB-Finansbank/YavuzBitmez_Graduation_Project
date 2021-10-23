@@ -11,7 +11,7 @@ class ListBuilder {
     static func build() -> ListViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "ListViewController") as! ListViewController
-        let interactor = ListInteractor()
+        let interactor = ListInteractor(service: appContainer.databaseService)
         let router = ListRouter(view: view)
         let presenter = ListPresenter(interactor: interactor, view: view, router: router)
         interactor.delegate = presenter
