@@ -10,7 +10,13 @@ import UIKit
 class PinnedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var taskList: [ListPresentation] = []
+    var taskList: [ListPresentation] = [] {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    var presenter: ListPresenterProtocol!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCollectionView()
@@ -19,6 +25,7 @@ class PinnedTableViewCell: UITableViewCell {
         collectionView.register(UINib(nibName: "PinnedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PinnedCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isScrollEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,27 +37,26 @@ class PinnedTableViewCell: UITableViewCell {
 
 extension PinnedTableViewCell:UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("asdasd")
+        //Detail will open
+        presenter.didSelectRow(at: indexPath)
     }
 }
 extension PinnedTableViewCell:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return self.taskList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PinnedCollectionViewCell", for: indexPath) as! PinnedCollectionViewCell
-        cell.header.text = self.taskList[indexPath.row].header
-        cell.title.text = self.taskList[indexPath.row].context
-        cell.dateText.text = "13:51"
+        cell.configure(data: taskList[indexPath.row])
         return cell
     }
 }
 extension PinnedTableViewCell:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 15
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: contentView.frame.width / 2 - 20, height: contentView.frame.height - 20)
+        return CGSize(width: contentView.frame.width / 2 - 15, height: 240)
     }
 }

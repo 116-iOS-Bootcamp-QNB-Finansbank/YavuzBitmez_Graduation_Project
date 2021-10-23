@@ -18,19 +18,20 @@ class PinnedCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        let gradient: CAGradientLayer = CAGradientLayer()
-//        gradient.colors = [UIColor.random().cgColor, UIColor.white.cgColor]
-//        gradient.locations = [0.0 , 1.0]
-//        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
-//        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-//        gradient.frame = self.frame
-//        taskView.layer.insertSublayer(gradient, at: 0)
-
-        taskView.backgroundColor = .random()
         layer.cornerRadius = 10
         dateView.backgroundColor = .clear
         dateView.layer.borderWidth = 1
         dateView.layer.borderColor = UIColor.black.cgColor
+        
     }
-
+    func configure(data:ListPresentation){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateFormatter.timeZone = .current
+        let customDate = dateFormatter.string(from: data.date)
+        
+        header.text = data.header
+        title.text = data.content
+        dateText.text = customDate
+    }
 }
