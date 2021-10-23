@@ -63,6 +63,7 @@
                             <constraint firstItem="IsN-Wm-SPo" firstAttribute="top" secondItem="9JW-Z8-OCF" secondAttribute="top" constant="14" id="cy5-Lb-14r"/>
                             <constraint firstItem="flU-Kc-KJW" firstAttribute="leading" secondItem="9JW-Z8-OCF" secondAttribute="leading" constant="14" id="j6f-nz-6x7"/>
                             <constraint firstItem="IsN-Wm-SPo" firstAttribute="leading" secondItem="9JW-Z8-OCF" secondAttribute="leading" constant="14" id="lbZ-9j-1tO"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qLN-fT-yw6" secondAttribute="trailing" constant="14" id="saO-RW-gYL"/>
                         </constraints>
                     </view>
                 </subviews>
