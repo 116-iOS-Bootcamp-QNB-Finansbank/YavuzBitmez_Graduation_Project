@@ -8,16 +8,17 @@
 import Foundation
 
 struct ListPresentation {
-    var id:Int
     var header:String
     var date:Date
-    var context:String
+    var content:String
+    var id:String
+    var repeats:Bool
     
-    init(id:Int,header:String,date:Date,context:String) {
-        self.id = id
-        self.header = header
-        self.date = date
-        self.context = context
+    init(task:TaskModel) {
+        self.header = task.header
+        self.date = task.date
+        self.content = task.content
+        self.id = task.id
+        self.repeats = task.repeats
     }
 }
-
