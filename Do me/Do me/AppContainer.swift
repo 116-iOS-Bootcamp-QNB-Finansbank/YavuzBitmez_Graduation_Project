@@ -8,8 +8,8 @@
 import UIKit
 
 let appContainer = AppContainer()
-
 class AppContainer {
-//    let service = dbservice()
+    let databaseService = DatabaseService()
     let router = AppRouter()
+    let notificationService = NotificationService()
 }

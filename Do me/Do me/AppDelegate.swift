@@ -12,9 +12,16 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let nfCenter = UNUserNotificationCenter.current()
+        nfCenter.requestAuthorization(options: [.alert,.sound,.badge]) { success, error in
+            if error != nil {
+                NSLog("[NotificationManager] Authorization Error %@", error.debugDescription)
+            }
+        }
+    
         return true
     }
 
@@ -33,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -63,11 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+    func saveContent () {
+        let content = persistentContainer.viewContext
+        if content.hasChanges {
             do {
-                try context.save()
+                try content.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
