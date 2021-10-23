@@ -40,10 +40,10 @@ What To Do is a simple To-do app written in Swift with Core Data.
 
 <!-- Screenshots -->
 ## Screenshots
-
-<img src="https://user-images.githubusercontent.com/24533945/138557640-b242185b-eb7a-4d09-a9c3-ec1426d54627.gif" width="400" height="790">
-<img src="https://user-images.githubusercontent.com/24533945/138557741-4157473e-7d14-44f4-9772-8a8f024bc6fc.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/24533945/138557640-b242185b-eb7a-4d09-a9c3-ec1426d54627.gif" width="300">     <img src="https://user-images.githubusercontent.com/24533945/138557741-4157473e-7d14-44f4-9772-8a8f024bc6fc.gif" width="300">
 
 
 <!-- LICENSE -->
 ## License
+
+MIT Licence
