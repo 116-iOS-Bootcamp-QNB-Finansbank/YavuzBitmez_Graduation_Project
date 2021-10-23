@@ -146,6 +146,10 @@ class DetailViewController: UIViewController {
         }else if content.text!.isEmpty {
             checkAlert(message: "Content")
             return false
+        }else if datePicker.date < Date() {
+            checkAlert(message: "Date ")
+            reminderViewTrigger()
+            return false
         }
         return true
     }
