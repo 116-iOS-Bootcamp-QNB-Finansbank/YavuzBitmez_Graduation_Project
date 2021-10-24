@@ -8,15 +8,17 @@
 import Foundation
 
 class TaskModel {
-    var id:Int
+    var id :String
     var header:String
     var date:Date
-    var context:String
+    var content:String
+    var repeats:Bool
     
-    init(id:Int,header:String,date:Date,context:String) {
+    init(header:String,date:Date,content:String,id:String,repeats:Bool) {
         self.id = id
         self.header = header
         self.date = date
-        self.context = context
+        self.content = content
+        self.repeats = repeats
     }
 }
